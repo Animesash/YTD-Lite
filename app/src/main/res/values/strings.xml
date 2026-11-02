@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- English — язык по умолчанию -->
+    <string name="app_name">YTD-Lite</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_downloads">Downloads</string>
+    <string name="nav_queue">Queue</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Главная: ссылка, предпросмотр и загрузка -->
+    <string name="home_title">What to download?</string>
+    <string name="home_message">Paste a link — the app will show the title, cover and quality options.</string>
+    <string name="home_link_hint">Link to a video or audio</string>
+    <string name="home_search">Search</string>
+    <string name="home_hint_title">How it works</string>
+    <string name="home_hint">1. Paste a link\n2. Choose video or audio and the quality\n3. Tap “Download”</string>
+    <string name="home_error_url">Enter a link starting with http:// or https://</string>
+    <string name="sheet_cover">Cover</string>
+    <string name="sheet_loading">Fetching info…</string>
+    <string name="sheet_error">Could not fetch info: %1$s</string>
+    <string name="sheet_video">Video</string>
+    <string name="sheet_audio">Audio</string>
+    <string name="sheet_no_video">This link has audio only</string>
+    <string name="sheet_quality">Quality</string>
+    <string name="sheet_quality_best">Best</string>
+    <string name="sheet_download">Download</string>
+    <string name="sheet_canceled">Download cancelled</string>
+    <string name="sheet_done">Saved: %1$s</string>
+    <string name="sheet_failed">Download failed: %1$s</string>
+    <string name="downloads_title">Nothing here yet</string>
+    <string name="downloads_message">Downloaded videos and audio will be collected in this list.</string>
+    <string name="queue_title">The queue is empty</string>
+    <string name="queue_message">Active and pending downloads will be shown here.</string>
+
+    <!-- Очередь и история загрузок -->
+    <string name="queue_cancel">Cancel</string>
+    <string name="queue_retry">Retry</string>
+    <string name="queue_remove">Remove</string>
+    <string name="queue_waiting">Waiting…</string>
+    <string name="queue_downloading">Downloading… %1$d%%</string>
+    <string name="queue_done">Done: %1$s</string>
+    <string name="queue_failed">Failed: %1$s</string>
+    <string name="queue_canceled">Canceled</string>
+    <string name="queue_added">Added to the queue</string>
+    <string name="queue_no_file">file not found in the download folder</string>
+    <string name="downloads_open">Open %1$s</string>
+    <string name="downloads_delete">Delete file</string>
+    <string name="downloads_delete_title">Delete the file?</string>
+    <string name="downloads_delete_message">The file «%1$s» will be deleted from the device.</string>
+    <string name="downloads_deleted">Deleted: %1$s</string>
+    <string name="downloads_open_failed">Could not open the file</string>
+    <string name="downloads_delete_failed">Could not delete the file</string>
+    <string name="settings_section_general">General</string>
+    <string name="settings_section_app">App</string>
+    <string name="settings_about">About</string>
+    <string name="settings_about_subtitle">Version, engine, links</string>
+    <string name="settings_update">Update</string>
+    <string name="settings_folders_subtitle">Audio folder, video folder</string>
+    <string name="settings_update_subtitle">App and yt-dlp</string>
+    <string name="about_title">About</string>
+    <string name="about_version">Version %1$s (build %2$d)</string>
+    <string name="update_title">Update</string>
+    <string name="update_section_ytdlp">yt-dlp</string>
+    <string name="update_ytdlp_bundled_title">Bundled build</string>
+    <string name="update_ytdlp_bundled_hint">Ships with the app (yt-dlp/yt-dlp). “Check now” compares it with the latest stable release.</string>
+    <string name="update_ytdlp_nightly_title">Nightly build</string>
+    <string name="update_ytdlp_nightly_hint">Fresh fixes from yt-dlp/yt-dlp-nightly-builds. “Check now” compares it with the latest nightly build and offers to update.</string>
+    <string name="update_ytdlp_current_bundled">Currently running: bundled build</string>
+    <string name="update_ytdlp_current_nightly">Currently running: nightly build %1$s</string>
+    <string name="update_ytdlp_open">Update and download yt-dlp</string>
+    <string name="update_ytdlp_installing">Downloading and installing…</string>
+    <string name="update_ytdlp_restoring">Restoring the bundled version…</string>
+    <string name="update_ytdlp_restored">Bundled yt-dlp version restored</string>
+    <string name="update_ytdlp_failed">Failed: %1$s</string>
+    <string name="update_ytdlp_switch_hint">Pick a build and tap “Check now”: the app looks for updates and asks whether to install a newer version. The bundled build works offline.</string>
+    <string name="language_title">Language</string>
+    <string name="language_system">System default</string>
+    <string name="language_be">Беларуская</string>
+    <string name="language_ro">Moldovenească</string>
+    <string name="language_ru">Русский</string>
+    <string name="language_uk">Українська</string>
+    <string name="language_en">English</string>
+    <string name="language_note">The app restarts after you pick a language.</string>
+
+    <!-- Куда сохранять файлы -->
+    <string name="folders_title">Folders</string>
+    <string name="folders_intro">Choose where to save video and audio.</string>
+    <string name="folders_video_title">Video</string>
+    <string name="folders_audio_title">Audio</string>
+    <string name="folders_default">Default: app folder</string>
+    <string name="folders_reset">Reset to default</string>
+    <string name="folders_note">Folders are picked with the system folder picker, access is kept between launches. Only the folders you pick are used.</string>
+    <string name="folders_pick_failed">Could not get access to that folder</string>
+    <string name="folders_reset_done">Default folders restored</string>
+    <string name="folders_no_access">Access lost — pick the folder again</string>
+
+    <!-- История изменений -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_current">Current</string>
+    <string name="changelog_whats_new">What\'s new</string>
+    <string name="changelog_0_1_0_summary">The first alpha release of YTD-Lite</string>
+
+    <!-- Проверка обновлений yt-dlp -->
+    <string name="update_ytdlp_check">Check now</string>
+    <string name="update_ytdlp_checking">Checking for updates…</string>
+    <string name="update_ytdlp_no_updates">No updates: version %1$s is the latest</string>
+    <string name="update_ytdlp_found_title">Update available</string>
+    <string name="update_ytdlp_found_message">yt-dlp %1$s. Install it now?</string>
+    <string name="update_ytdlp_updated">yt-dlp updated: %1$s</string>
+    <string name="update_ytdlp_current_stable">Running: stable build %1$s</string>
+    <string name="update_ytdlp_restore">Restore bundled version</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+
+    <!-- Окно первого запуска -->
+    <string name="first_run_title">First build — YTD-Lite 0.1.0-alpha</string>
+    <string name="first_run_message">This is the first version, so straight to the point.
+
+YTD-Lite downloads video and audio from a link. It runs on yt-dlp — I did not write my own engine and I am not going to. Paste a link, pick a format, tap “Download” — the file lands in the folder you chose (Downloads by default).
+
+Version 0.1.0-alpha. That means half of the small things are not finished yet, and some are definitely broken. If something does not work)</string>
+    <string name="first_run_dont_show">Don’t show again</string>
+    <string name="first_run_ok">OK</string>
+</resources>

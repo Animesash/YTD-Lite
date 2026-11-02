@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Русский -->
+    <string name="app_name">YTD-Lite</string>
+    <string name="nav_home">Главная</string>
+    <string name="nav_downloads">Загрузки</string>
+    <string name="nav_queue">Очередь</string>
+    <string name="nav_settings">Настройки</string>
+
+    <!-- Главная: ссылка, предпросмотр и загрузка -->
+    <string name="home_title">Что скачать?</string>
+    <string name="home_message">Вставьте ссылку — покажем название, обложку и варианты качества.</string>
+    <string name="home_link_hint">Ссылка на видео или аудио</string>
+    <string name="home_search">Поиск</string>
+    <string name="home_hint_title">Как это работает</string>
+    <string name="home_hint">1. Вставьте ссылку\n2. Выберите видео или аудио и качество\n3. Нажмите «Скачать»</string>
+    <string name="home_error_url">Введите ссылку, которая начинается с http:// или https://</string>
+    <string name="sheet_cover">Обложка</string>
+    <string name="sheet_loading">Получаем информацию…</string>
+    <string name="sheet_error">Не удалось получить информацию: %1$s</string>
+    <string name="sheet_video">Видео</string>
+    <string name="sheet_audio">Аудио</string>
+    <string name="sheet_no_video">В этой ссылке только аудио</string>
+    <string name="sheet_quality">Качество</string>
+    <string name="sheet_quality_best">Лучшее</string>
+    <string name="sheet_download">Скачать</string>
+    <string name="sheet_canceled">Загрузка отменена</string>
+    <string name="sheet_done">Готово: %1$s</string>
+    <string name="sheet_failed">Ошибка загрузки: %1$s</string>
+    <string name="downloads_title">Пока пусто</string>
+    <string name="downloads_message">Скачанные видео и аудио будут собраны в этом списке.</string>
+    <string name="queue_title">Очередь пуста</string>
+    <string name="queue_message">Активные и ожидающие загрузки будут показаны здесь.</string>
+
+    <!-- Очередь и история загрузок -->
+    <string name="queue_cancel">Отменить</string>
+    <string name="queue_retry">Повторить</string>
+    <string name="queue_remove">Убрать</string>
+    <string name="queue_waiting">В очереди…</string>
+    <string name="queue_downloading">Скачиваем… %1$d%%</string>
+    <string name="queue_done">Готово: %1$s</string>
+    <string name="queue_failed">Ошибка: %1$s</string>
+    <string name="queue_canceled">Отменено</string>
+    <string name="queue_added">Добавлено в очередь</string>
+    <string name="queue_no_file">файл не найден в папке загрузки</string>
+    <string name="downloads_open">Открыть %1$s</string>
+    <string name="downloads_delete">Удалить файл</string>
+    <string name="downloads_delete_title">Удалить файл?</string>
+    <string name="downloads_delete_message">Файл «%1$s» будет удалён с устройства.</string>
+    <string name="downloads_deleted">Удалено: %1$s</string>
+    <string name="downloads_open_failed">Не удалось открыть файл</string>
+    <string name="downloads_delete_failed">Не удалось удалить файл</string>
+    <string name="settings_section_general">Основное</string>
+    <string name="settings_section_app">Приложение</string>
+    <string name="settings_about">О приложении</string>
+    <string name="settings_about_subtitle">Версия, движок, ссылки</string>
+    <string name="settings_update">Обновление</string>
+    <string name="settings_folders_subtitle">Аудио папка, видео папка</string>
+    <string name="settings_update_subtitle">Программа и yt-dlp</string>
+    <string name="about_title">О приложении</string>
+    <string name="about_version">Версия %1$s (сборка %2$d)</string>
+    <string name="update_title">Обновление</string>
+    <string name="update_section_ytdlp">yt-dlp</string>
+    <string name="update_ytdlp_bundled_title">Встроенная сборка</string>
+    <string name="update_ytdlp_bundled_hint">Идёт в комплекте с приложением (yt-dlp/yt-dlp). «Проверить сейчас» сравнит её с последним стабильным релизом.</string>
+    <string name="update_ytdlp_nightly_title">Ночная сборка</string>
+    <string name="update_ytdlp_nightly_hint">Свежие исправления с yt-dlp/yt-dlp-nightly-builds. «Проверить сейчас» сравнит с последней ночной сборкой и предложит обновиться.</string>
+    <string name="update_ytdlp_current_bundled">Сейчас работает: встроенная сборка</string>
+    <string name="update_ytdlp_current_nightly">Сейчас работает: ночная сборка %1$s</string>
+    <string name="update_ytdlp_open">Обновление и скачать yt-dlp</string>
+    <string name="update_ytdlp_installing">Скачиваем и устанавливаем…</string>
+    <string name="update_ytdlp_restoring">Возвращаем встроенную версию…</string>
+    <string name="update_ytdlp_restored">Возвращена встроенная версия yt-dlp</string>
+    <string name="update_ytdlp_failed">Не удалось: %1$s</string>
+    <string name="update_ytdlp_switch_hint">Выберите сборку и нажмите «Проверить сейчас»: приложение проверит обновления и спросит, устанавливать ли новую версию. Встроенная сборка работает без интернета.</string>
+    <string name="language_title">Язык</string>
+    <string name="language_system">Как в системе</string>
+    <string name="language_be">Беларуская</string>
+    <string name="language_ro">Moldovenească</string>
+    <string name="language_ru">Русский</string>
+    <string name="language_uk">Українська</string>
+    <string name="language_en">English</string>
+    <string name="language_note">После выбора языка приложение перезапустится.</string>
+
+    <!-- Куда сохранять файлы -->
+    <string name="folders_title">Папки</string>
+    <string name="folders_intro">Выберите, куда сохранять видео и аудио.</string>
+    <string name="folders_video_title">Видео</string>
+    <string name="folders_audio_title">Аудио</string>
+    <string name="folders_default">По умолчанию: папка приложения</string>
+    <string name="folders_reset">Сбросить к папке по умолчанию</string>
+    <string name="folders_note">Папки выбираются системным диалогом, доступ сохраняется между запусками. Используются только выбранные папки.</string>
+    <string name="folders_pick_failed">Не удалось получить доступ к папке</string>
+    <string name="folders_reset_done">Восстановлены папки по умолчанию</string>
+    <string name="folders_no_access">Доступ потерян — выберите папку заново</string>
+
+    <!-- История изменений -->
+    <string name="changelog_title">История изменений</string>
+    <string name="changelog_current">Текущая</string>
+    <string name="changelog_whats_new">Что нового</string>
+    <string name="changelog_0_1_0_summary">Первый альфа-выпуск YTD-Lite</string>
+
+    <!-- Проверка обновлений yt-dlp -->
+    <string name="update_ytdlp_check">Проверить сейчас</string>
+    <string name="update_ytdlp_checking">Проверяем обновления…</string>
+    <string name="update_ytdlp_no_updates">Обновлений нет: установлена последняя версия %1$s</string>
+    <string name="update_ytdlp_found_title">Доступно обновление</string>
+    <string name="update_ytdlp_found_message">yt-dlp %1$s. Установить сейчас?</string>
+    <string name="update_ytdlp_updated">yt-dlp обновлён: %1$s</string>
+    <string name="update_ytdlp_current_stable">Сейчас работает: стабильная сборка %1$s</string>
+    <string name="update_ytdlp_restore">Вернуть встроенную версию</string>
+    <string name="dialog_yes">Да</string>
+    <string name="dialog_no">Нет</string>
+
+    <!-- Окно первого запуска -->
+    <string name="first_run_title">Первая сборка — YTD-Lite 0.1.0-alpha</string>
+    <string name="first_run_message">Это первая версия, так что сразу о главном.
+
+YTD-Lite качает видео и аудио по ссылке. Работает через yt-dlp, свой движок я не писал и писать не собираюсь. Вставил ссылку, выбрал формат, нажал «Скачать» — файл лежит в папке, которую ты указал (по умолчанию — «Загрузки»).
+
+Версия 0.1.0-alpha. Это значит, что половина мелочей ещё не доделана, а часть точно сломана. Если что-то не работает)</string>
+    <string name="first_run_dont_show">Больше не показывать</string>
+    <string name="first_run_ok">Ок</string>
+</resources>

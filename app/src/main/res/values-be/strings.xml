@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Беларуская -->
+    <string name="app_name">YTD-Lite</string>
+    <string name="nav_home">Галоўная</string>
+    <string name="nav_downloads">Загрузкі</string>
+    <string name="nav_queue">Чарга</string>
+    <string name="nav_settings">Налады</string>
+
+    <!-- Главная: ссылка, предпросмотр и загрузка -->
+    <string name="home_title">Што спампаваць?</string>
+    <string name="home_message">Устаўце спасылку — пакажам назву, вокладку і варыянты якасці.</string>
+    <string name="home_link_hint">Спасылка на відэа або аўдыя</string>
+    <string name="home_search">Пошук</string>
+    <string name="home_hint_title">Як гэта працуе</string>
+    <string name="home_hint">1. Устаўце спасылку\n2. Выберыце відэа або аўдыя і якасць\n3. Націсніце «Спампаваць»</string>
+    <string name="home_error_url">Увядзіце спасылку, якая пачынаецца з http:// або https://</string>
+    <string name="sheet_cover">Вокладка</string>
+    <string name="sheet_loading">Атрымліваем інфармацыю…</string>
+    <string name="sheet_error">Не ўдалося атрымаць інфармацыю: %1$s</string>
+    <string name="sheet_video">Відэа</string>
+    <string name="sheet_audio">Аўдыя</string>
+    <string name="sheet_no_video">У гэтай спасылцы толькі аўдыя</string>
+    <string name="sheet_quality">Якасць</string>
+    <string name="sheet_quality_best">Найлепшае</string>
+    <string name="sheet_download">Спампаваць</string>
+    <string name="sheet_canceled">Спампоўка скасавана</string>
+    <string name="sheet_done">Гатова: %1$s</string>
+    <string name="sheet_failed">Памылка спампоўкі: %1$s</string>
+    <string name="downloads_title">Пакуль пуста</string>
+    <string name="downloads_message">Спампаваныя відэа і аўдыё будуць сабраны ў гэтым спісе.</string>
+    <string name="queue_title">Чарга пустая</string>
+    <string name="queue_message">Актыўныя і чаканыя загрузкі будуць паказаны тут.</string>
+
+    <!-- Очередь и история загрузок -->
+    <string name="queue_cancel">Скасаваць</string>
+    <string name="queue_retry">Паўтарыць</string>
+    <string name="queue_remove">Прыбраць</string>
+    <string name="queue_waiting">У чарзе…</string>
+    <string name="queue_downloading">Спампоўваем… %1$d%%</string>
+    <string name="queue_done">Гатова: %1$s</string>
+    <string name="queue_failed">Памылка: %1$s</string>
+    <string name="queue_canceled">Скасавана</string>
+    <string name="queue_added">Дададзена ў чаргу</string>
+    <string name="queue_no_file">файл не знойдзены ў папцы спампоўкі</string>
+    <string name="downloads_open">Адкрыць %1$s</string>
+    <string name="downloads_delete">Выдаліць файл</string>
+    <string name="downloads_delete_title">Выдаліць файл?</string>
+    <string name="downloads_delete_message">Файл «%1$s» будзе выдалены з прылады.</string>
+    <string name="downloads_deleted">Выдалены: %1$s</string>
+    <string name="downloads_open_failed">Не ўдалося адкрыць файл</string>
+    <string name="downloads_delete_failed">Не ўдалося выдаліць файл</string>
+    <string name="settings_section_general">Асноўнае</string>
+    <string name="settings_section_app">Праграма</string>
+    <string name="settings_about">Пра праграму</string>
+    <string name="settings_about_subtitle">Версія, рухавік, спасылкі</string>
+    <string name="settings_update">Абнаўленне</string>
+    <string name="settings_folders_subtitle">Аўдыё папка, відэа папка</string>
+    <string name="settings_update_subtitle">Праграма і yt-dlp</string>
+    <string name="about_title">Пра праграму</string>
+    <string name="about_version">Версія %1$s (зборка %2$d)</string>
+    <string name="update_title">Абнаўленне</string>
+    <string name="update_section_ytdlp">yt-dlp</string>
+    <string name="update_ytdlp_bundled_title">Убудаваная зборка</string>
+    <string name="update_ytdlp_bundled_hint">Ідзе ў камплекце з праграмай (yt-dlp/yt-dlp). «Праверыць зараз» параўнае яе з апошнім стабільным рэлізам.</string>
+    <string name="update_ytdlp_nightly_title">Начная зборка</string>
+    <string name="update_ytdlp_nightly_hint">Свежыя выпраўленні з yt-dlp/yt-dlp-nightly-builds. «Праверыць зараз» параўнае з апошняй начной зборкай і прапануе абнавіцца.</string>
+    <string name="update_ytdlp_current_bundled">Зараз працуе: убудаваная зборка</string>
+    <string name="update_ytdlp_current_nightly">Зараз працуе: начная зборка %1$s</string>
+    <string name="update_ytdlp_open">Абнаўленне і спампаваць yt-dlp</string>
+    <string name="update_ytdlp_installing">Спампоўваем і ўсталёўваем…</string>
+    <string name="update_ytdlp_restoring">Вяртаем убудаваную версію…</string>
+    <string name="update_ytdlp_restored">Вернута ўбудаваная версія yt-dlp</string>
+    <string name="update_ytdlp_failed">Не ўдалося: %1$s</string>
+    <string name="update_ytdlp_switch_hint">Выберыце зборку і націсніце «Праверыць зараз»: праграма праверыць абнаўленні і спытае, ці ўсталёўваць новую версію. Убудаваная зборка працуе без інтэрнэту.</string>
+    <string name="language_title">Мова</string>
+    <string name="language_system">Як у сістэме</string>
+    <string name="language_be">Беларуская</string>
+    <string name="language_ro">Moldovenească</string>
+    <string name="language_ru">Русский</string>
+    <string name="language_uk">Українська</string>
+    <string name="language_en">English</string>
+    <string name="language_note">Пасля выбару мовы праграма перазапусціцца.</string>
+
+    <!-- Куда сохранять файлы -->
+    <string name="folders_title">Папкі</string>
+    <string name="folders_intro">Выберыце, куды захоўваць відэа і аўдыё.</string>
+    <string name="folders_video_title">Відэа</string>
+    <string name="folders_audio_title">Аўдыё</string>
+    <string name="folders_default">Па змаўчанні: папка праграмы</string>
+    <string name="folders_reset">Скінуць да папкі па змаўчанні</string>
+    <string name="folders_note">Папкі выбіраюцца сістэмным дыялогам, доступ захоўваецца паміж запускамі. Выкарыстоўваюцца толькі выбраныя папкі.</string>
+    <string name="folders_pick_failed">Не ўдалося атрымаць доступ да папкі</string>
+    <string name="folders_reset_done">Адноўлены папкі па змаўчанні</string>
+    <string name="folders_no_access">Доступ страчаны — выберыце папку зноў</string>
+
+    <!-- История изменений -->
+    <string name="changelog_title">Гісторыя змен</string>
+    <string name="changelog_current">Бягучая</string>
+    <string name="changelog_whats_new">Што новага</string>
+    <string name="changelog_0_1_0_summary">Першы альфа-выпуск YTD-Lite</string>
+
+    <!-- Проверка обновлений yt-dlp -->
+    <string name="update_ytdlp_check">Праверыць зараз</string>
+    <string name="update_ytdlp_checking">Правяраем абнаўленні…</string>
+    <string name="update_ytdlp_no_updates">Абнаўленняў няма: усталявана апошняя версія %1$s</string>
+    <string name="update_ytdlp_found_title">Даступна абнаўленне</string>
+    <string name="update_ytdlp_found_message">yt-dlp %1$s. Усталяваць зараз?</string>
+    <string name="update_ytdlp_updated">yt-dlp абноўлены: %1$s</string>
+    <string name="update_ytdlp_current_stable">Зараз працуе: стабільная зборка %1$s</string>
+    <string name="update_ytdlp_restore">Вярнуць убудаваную версію</string>
+    <string name="dialog_yes">Так</string>
+    <string name="dialog_no">Не</string>
+
+    <!-- Окно первого запуска -->
+    <string name="first_run_title">Першая зборка — YTD-Lite 0.1.0-alpha</string>
+    <string name="first_run_message">Гэта першая версія, таму адразу пра галоўнае.
+
+YTD-Lite спампоўвае відэа і аўдыё па спасылцы. Працуе праз yt-dlp, свой рухавік я не пісаў і пісаць не збіраюся. Уставіў спасылку, выбраў фармат, націснуў «Спампаваць» — файл ляжыць у папцы, якую ты паказаў (па змаўчанні — «Загрузкі»).
+
+Версія 0.1.0-alpha. Гэта значыць, што палова дробязяў яшчэ не дапрацавана, а частка дакладна зламана. Калі нешта не працуе)</string>
+    <string name="first_run_dont_show">Больш не паказваць</string>
+    <string name="first_run_ok">Ок</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Галочка «Больше не показывать» в окне первого запуска. -->
+<com.google.android.material.checkbox.MaterialCheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dont_show"
+    style="@style/Widget.Material3.CompoundButton.CheckBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_check_row"
+    android:minHeight="56dp"
+    android:paddingStart="12dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="8dp"
+    android:text="@string/first_run_dont_show"
+    android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+    android:textColor="?attr/colorOnSurface"
+    app:useMaterialThemeColors="true" />

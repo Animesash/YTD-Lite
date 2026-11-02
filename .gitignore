@@ -1,35 +1,74 @@
-# Gradle files
-.gradle/
+# ---------------------------------------------------------------------------
+# Что не должно попадать в репозиторий.
+#
+# В git лежит только исходный код. Всё, что собирается локально, настраивается
+# под конкретную машину или является ключом подписи, живёт вне репозитория.
+# ---------------------------------------------------------------------------
+
+# --- Сборка и артефакты -----------------------------------------------------
 build/
-.kotlin/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
+app/build/
+/out/
+/captures
+*.apk
+*.aab
+*.apks
+*.ap_
+*.dex
+*.class
+*.hprof
+lint-results*.xml
+reports/
+output.json
 *.log
 
-# Android Studio generated files and folders
-captures/
+# --- Gradle, Kotlin, Android SDK -------------------------------------------
+.gradle/
+.kotlin/
+local.properties
 .externalNativeBuild/
 .cxx/
-*.aab
-*.apk
-output-metadata.json
+.cxx/arm64-v8a/
 
-# IntelliJ
-*.iml
+# --- IDE и редакторы --------------------------------------------------------
 .idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
+*.iml
+*.ipr
+*.iws
+.vscode/
+.navigation/
+.project
+.settings/
+.classpath
+*.sublime-workspace
+*.swp
 
-# Keystore files
+# --- Ключи подписи и секреты (не для чужих глаз) ---------------------------
 *.jks
 *.keystore
+*.p12
+*.pfx
+*.pepk
+*.pk8
+*.pem
+*.der
+keystore/
+keystore.properties
+signing.properties
+key.properties
+secrets.properties
+.env
+.env.*
+token.txt
+*.token
+.npmrc
+.pypirc
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
-
-# Android Profiling
-*.hprof
+# --- Системный мусор --------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini

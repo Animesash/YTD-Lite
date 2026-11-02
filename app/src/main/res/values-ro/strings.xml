@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Moldovenească / Română -->
+    <string name="app_name">YTD-Lite</string>
+    <string name="nav_home">Acasă</string>
+    <string name="nav_downloads">Descărcări</string>
+    <string name="nav_queue">Coadă</string>
+    <string name="nav_settings">Setări</string>
+
+    <!-- Главная: ссылка, предпросмотр и загрузка -->
+    <string name="home_title">Ce descarci?</string>
+    <string name="home_message">Lipește un link — îți arătăm titlul, coperta și opțiunile de calitate.</string>
+    <string name="home_link_hint">Link către video sau audio</string>
+    <string name="home_search">Caută</string>
+    <string name="home_hint_title">Cum funcționează</string>
+    <string name="home_hint">1. Lipește un link\n2. Alege video sau audio și calitatea\n3. Apasă „Descarcă”</string>
+    <string name="home_error_url">Introdu un link care începe cu http:// sau https://</string>
+    <string name="sheet_cover">Copertă</string>
+    <string name="sheet_loading">Obținem informațiile…</string>
+    <string name="sheet_error">Nu am putut obține informațiile: %1$s</string>
+    <string name="sheet_video">Video</string>
+    <string name="sheet_audio">Audio</string>
+    <string name="sheet_no_video">Acest link conține doar audio</string>
+    <string name="sheet_quality">Calitate</string>
+    <string name="sheet_quality_best">Cea mai bună</string>
+    <string name="sheet_download">Descarcă</string>
+    <string name="sheet_canceled">Descărcare anulată</string>
+    <string name="sheet_done">Salvat: %1$s</string>
+    <string name="sheet_failed">Descărcarea a eșuat: %1$s</string>
+    <string name="downloads_title">Deocamdată gol</string>
+    <string name="downloads_message">Videoclipurile și fișierele audio descărcate vor fi adunate în această listă.</string>
+    <string name="queue_title">Coada este goală</string>
+    <string name="queue_message">Descărcările active și în așteptare vor fi afișate aici.</string>
+
+    <!-- Очередь и история загрузок -->
+    <string name="queue_cancel">Anulează</string>
+    <string name="queue_retry">Reîncearcă</string>
+    <string name="queue_remove">Elimină</string>
+    <string name="queue_waiting">În așteptare…</string>
+    <string name="queue_downloading">Descărcăm… %1$d%%</string>
+    <string name="queue_done">Salvat: %1$s</string>
+    <string name="queue_failed">Eroare: %1$s</string>
+    <string name="queue_canceled">Anulat</string>
+    <string name="queue_added">Adăugat în coadă</string>
+    <string name="queue_no_file">fișierul nu a fost găsit în folderul de descărcare</string>
+    <string name="downloads_open">Deschide %1$s</string>
+    <string name="downloads_delete">Șterge fișierul</string>
+    <string name="downloads_delete_title">Ștergi fișierul?</string>
+    <string name="downloads_delete_message">Fișierul „%1$s” va fi șters de pe dispozitiv.</string>
+    <string name="downloads_deleted">Șters: %1$s</string>
+    <string name="downloads_open_failed">Nu am putut deschide fișierul</string>
+    <string name="downloads_delete_failed">Nu am putut șterge fișierul</string>
+    <string name="settings_section_general">General</string>
+    <string name="settings_section_app">Aplicație</string>
+    <string name="settings_about">Despre aplicație</string>
+    <string name="settings_about_subtitle">Versiune, motor, linkuri</string>
+    <string name="settings_update">Actualizare</string>
+    <string name="settings_folders_subtitle">Folder audio, folder video</string>
+    <string name="settings_update_subtitle">Aplicația și yt-dlp</string>
+    <string name="about_title">Despre aplicație</string>
+    <string name="about_version">Versiunea %1$s (build %2$d)</string>
+    <string name="update_title">Actualizare</string>
+    <string name="update_section_ytdlp">yt-dlp</string>
+    <string name="update_ytdlp_bundled_title">Build inclus</string>
+    <string name="update_ytdlp_bundled_hint">Vine cu aplicația (yt-dlp/yt-dlp). „Verifică acum” o compară cu cea mai recentă versiune stabilă.</string>
+    <string name="update_ytdlp_nightly_title">Build nocturn</string>
+    <string name="update_ytdlp_nightly_hint">Corecturi recente din yt-dlp/yt-dlp-nightly-builds. „Verifică acum” compară cu cea mai recentă versiune nightly și propune actualizarea.</string>
+    <string name="update_ytdlp_current_bundled">Acum rulează: buildul inclus</string>
+    <string name="update_ytdlp_current_nightly">Acum rulează: buildul nocturn %1$s</string>
+    <string name="update_ytdlp_open">Actualizare și descărcare yt-dlp</string>
+    <string name="update_ytdlp_installing">Se descarcă și se instalează…</string>
+    <string name="update_ytdlp_restoring">Se restaurează versiunea inclusă…</string>
+    <string name="update_ytdlp_restored">A fost restaurată versiunea yt-dlp inclusă</string>
+    <string name="update_ytdlp_failed">Nu s-a reușit: %1$s</string>
+    <string name="update_ytdlp_switch_hint">Alegeți o versiune și apăsați „Verifică acum”: aplicația caută actualizări și întreabă dacă să instaleze o versiune nouă. Versiunea inclusă funcționează fără internet.</string>
+    <string name="language_title">Limbă</string>
+    <string name="language_system">Ca în sistem</string>
+    <string name="language_be">Беларуская</string>
+    <string name="language_ro">Moldovenească</string>
+    <string name="language_ru">Русский</string>
+    <string name="language_uk">Українська</string>
+    <string name="language_en">English</string>
+    <string name="language_note">După alegerea limbii aplicația se va reporni.</string>
+
+    <!-- Куда сохранять файлы -->
+    <string name="folders_title">Foldere</string>
+    <string name="folders_intro">Alegeți unde să salvați video și audio.</string>
+    <string name="folders_video_title">Video</string>
+    <string name="folders_audio_title">Audio</string>
+    <string name="folders_default">Implicit: folderul aplicației</string>
+    <string name="folders_reset">Resetează la implicit</string>
+    <string name="folders_note">Folderele se aleg prin selectorul de sistem, accesul se păstrează între lansări. Sunt folosite doar folderele alese.</string>
+    <string name="folders_pick_failed">Nu s-a putut obține accesul la folder</string>
+    <string name="folders_reset_done">Folderele implicite au fost restaurate</string>
+    <string name="folders_no_access">Accesul s-a pierdut — alegeți folderul din nou</string>
+
+    <!-- История изменений -->
+    <string name="changelog_title">Istoricul modificărilor</string>
+    <string name="changelog_current">Curentă</string>
+    <string name="changelog_whats_new">Ce este nou</string>
+    <string name="changelog_0_1_0_summary">Prima versiune alfa YTD-Lite</string>
+
+    <!-- Проверка обновлений yt-dlp -->
+    <string name="update_ytdlp_check">Verifică acum</string>
+    <string name="update_ytdlp_checking">Se verifică actualizările…</string>
+    <string name="update_ytdlp_no_updates">Nicio actualizare: versiunea %1$s este cea mai recentă</string>
+    <string name="update_ytdlp_found_title">Actualizare disponibilă</string>
+    <string name="update_ytdlp_found_message">yt-dlp %1$s. Instalați acum?</string>
+    <string name="update_ytdlp_updated">yt-dlp a fost actualizat: %1$s</string>
+    <string name="update_ytdlp_current_stable">Rulează: versiunea stabilă %1$s</string>
+    <string name="update_ytdlp_restore">Revino la versiunea inclusă</string>
+    <string name="dialog_yes">Da</string>
+    <string name="dialog_no">Nu</string>
+
+    <!-- Окно первого запуска -->
+    <string name="first_run_title">Prima versiune — YTD-Lite 0.1.0-alpha</string>
+    <string name="first_run_message">Este prima versiune, așa că direct la subiect.
+
+YTD-Lite descarcă video și audio după un link. Funcționează prin yt-dlp — nu am scris propriul motor și nu intenționez. Lipești linkul, alegi formatul, apeși „Descarcă” — fișierul ajunge în folderul ales (implicit „Descărcări”).
+
+Versiunea 0.1.0-alpha. Asta înseamnă că jumătate din mărunțișuri nu sunt gata, iar o parte sigur e stricată. Dacă ceva nu merge)</string>
+    <string name="first_run_dont_show">Nu mai afișa</string>
+    <string name="first_run_ok">Ok</string>
+</resources>

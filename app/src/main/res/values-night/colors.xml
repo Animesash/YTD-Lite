@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Палитра Material Design 3 (dark) -->
+    <!-- Фирменный голубой для «YTD» в заголовке приложения (тёмная тема) -->
+    <color name="md_brand_blue">#8FD4F5</color>
+
+    <color name="md_primary">#FFB4A9</color>
+    <color name="md_on_primary">#690000</color>
+    <color name="md_primary_container">#930000</color>
+    <color name="md_on_primary_container">#FFDAD5</color>
+    <color name="md_primary_inverse">#B3261E</color>
+
+    <color name="md_secondary">#E7BDB6</color>
+    <color name="md_on_secondary">#442925</color>
+    <color name="md_secondary_container">#5D3F3B</color>
+    <color name="md_on_secondary_container">#FFDAD5</color>
+
+    <color name="md_tertiary">#DEC48C</color>
+    <color name="md_on_tertiary">#3B2F05</color>
+    <color name="md_tertiary_container">#534619</color>
+    <color name="md_on_tertiary_container">#FBDFA6</color>
+
+    <color name="md_error">#F2B8B5</color>
+    <color name="md_on_error">#601410</color>
+    <color name="md_error_container">#8C1D18</color>
+    <color name="md_on_error_container">#F9DEDC</color>
+
+    <color name="md_background">#201A19</color>
+    <color name="md_on_background">#EDE0DE</color>
+    <color name="md_surface">#201A19</color>
+    <color name="md_on_surface">#EDE0DE</color>
+    <color name="md_surface_variant">#534341</color>
+    <color name="md_on_surface_variant">#D8C2BE</color>
+    <color name="md_surface_inverse">#EDE0DE</color>
+    <color name="md_on_surface_inverse">#3B2F2E</color>
+
+    <color name="md_surface_dim">#141110</color>
+    <color name="md_surface_bright">#3B3837</color>
+    <color name="md_surface_container_lowest">#0F0D0D</color>
+    <color name="md_surface_container_low">#1D1B1A</color>
+    <color name="md_surface_container">#211F1E</color>
+    <color name="md_surface_container_high">#2C2A28</color>
+    <color name="md_surface_container_highest">#373432</color>
+
+    <color name="md_outline">#A08C8A</color>
+    <color name="md_outline_variant">#534341</color>
+</resources>
