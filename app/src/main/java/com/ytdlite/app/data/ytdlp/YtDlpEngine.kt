@@ -4,6 +4,8 @@ import android.content.Context
 import android.os.Environment
 import android.util.Log
 import com.ytdlite.app.BuildConfig
+import com.ytdlite.app.R
+import com.ytdlite.app.data.settings.LanguageCatalog
 import com.yausername.ffmpeg.FFmpeg
 import com.yausername.youtubedl_android.YoutubeDL
 import com.yausername.youtubedl_android.YoutubeDLRequest
@@ -39,6 +41,10 @@ import java.io.File
 class YtDlpEngine private constructor(context: Context) {
 
     private val appContext: Context = context.applicationContext
+
+    /** Контекст на языке приложения — им читаем тексты ошибок. */
+    private fun text(res: Int, vararg args: Any): String =
+        LanguageCatalog.localized(appContext).getString(res, *args)
     private val initMutex = Mutex()
 
     @Volatile
@@ -72,7 +78,7 @@ class YtDlpEngine private constructor(context: Context) {
                     initialized = true
                     Log.i(TAG, "yt-dlp готов, версия: ${version()}")
                 } catch (e: Exception) {
-                    throw YtDlpException("Не удалось инициализировать yt-dlp", e)
+                    throw YtDlpException(text(R.string.err_ytdlp_init), e)
                 }
             }
         }
@@ -98,7 +104,7 @@ class YtDlpEngine private constructor(context: Context) {
                     else -> YtDlpUpdateResult.UNKNOWN
                 }
             } catch (e: Exception) {
-                throw YtDlpException("Не удалось обновить yt-dlp", e)
+                throw YtDlpException(text(R.string.err_ytdlp_update), e)
             }
         }
     }
@@ -112,7 +118,7 @@ class YtDlpEngine private constructor(context: Context) {
                 val request = YoutubeDLRequest(url).addOption("--no-playlist")
                 YoutubeDL.getInfo(request).toYtDlpVideoInfo()
             } catch (e: Exception) {
-                throw YtDlpException("Не удалось получить информацию о видео", e)
+                throw YtDlpException(text(R.string.err_video_info), e)
             }
         }
     }
@@ -146,7 +152,7 @@ class YtDlpEngine private constructor(context: Context) {
             } catch (e: YoutubeDL.CanceledException) {
                 YtDlpDownloadResult.Canceled
             } catch (e: Exception) {
-                throw YtDlpException("Ошибка загрузки", e)
+                throw YtDlpException(text(R.string.err_download), e)
             }
         }
     }
@@ -172,7 +178,7 @@ class YtDlpEngine private constructor(context: Context) {
                     YoutubeDL.ytdlpDirName
                 )
                 if (ytdlpDir.exists() && !ytdlpDir.deleteRecursively()) {
-                    throw YtDlpException("Не удалось удалить скачанную сборку yt-dlp")
+                    throw YtDlpException(text(R.string.err_download_remove))
                 }
                 // Распаковываем встроенный бинарник заново.
                 YoutubeDL.init_ytdlp(appContext, ytdlpDir)
@@ -180,7 +186,7 @@ class YtDlpEngine private constructor(context: Context) {
             } catch (e: YtDlpException) {
                 throw e
             } catch (e: Exception) {
-                throw YtDlpException("Не удалось вернуть встроенную версию yt-dlp", e)
+                throw YtDlpException(text(R.string.err_ytdlp_restore), e)
             }
         }
     }
@@ -203,10 +209,10 @@ class YtDlpEngine private constructor(context: Context) {
     private fun validateUrl(url: String) {
         val trimmed = url.trim()
         if (trimmed.isEmpty()) {
-            throw YtDlpException("Пустая ссылка")
+            throw YtDlpException(text(R.string.err_url_empty))
         }
         if (!trimmed.startsWith("http://") && !trimmed.startsWith("https://")) {
-            throw YtDlpException("Ссылка должна начинаться с http:// или https://")
+            throw YtDlpException(text(R.string.err_url_scheme))
         }
     }
 

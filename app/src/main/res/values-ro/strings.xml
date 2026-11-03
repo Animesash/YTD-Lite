@@ -80,7 +80,7 @@
     <string name="language_ru">Русский</string>
     <string name="language_uk">Українська</string>
     <string name="language_en">English</string>
-    <string name="language_note">După alegerea limbii aplicația se va reporni.</string>
+    <string name="language_note">Limba se aplică imediat, fără repornirea aplicației.</string>
 
     <!-- Куда сохранять файлы -->
     <string name="folders_title">Foldere</string>
@@ -95,10 +95,7 @@
     <string name="folders_no_access">Accesul s-a pierdut — alegeți folderul din nou</string>
 
     <!-- История изменений -->
-    <string name="changelog_title">Istoricul modificărilor</string>
-    <string name="changelog_current">Curentă</string>
-    <string name="changelog_whats_new">Ce este nou</string>
-    <string name="changelog_0_1_0_summary">Prima versiune alfa YTD-Lite</string>
+    <string name="about_changelog">Istoricul modificărilor</string>
 
     <!-- Проверка обновлений yt-dlp -->
     <string name="update_ytdlp_check">Verifică acum</string>
@@ -121,4 +118,21 @@ YTD-Lite descarcă video și audio după un link. Funcționează prin yt-dlp —
 Versiunea 0.1.0-alpha. Asta înseamnă că jumătate din mărunțișuri nu sunt gata, iar o parte sigur e stricată. Dacă ceva nu merge)</string>
     <string name="first_run_dont_show">Nu mai afișa</string>
     <string name="first_run_ok">Ok</string>
+
+    <!-- Тексты ошибок движка и сохранения файла. -->
+    <string name="err_ytdlp_init">Nu s-a putut inițializa yt-dlp</string>
+    <string name="err_ytdlp_update">Nu s-a putut actualiza yt-dlp</string>
+    <string name="err_video_info">Nu s-au putut obține datele videoclipului</string>
+    <string name="err_download">Descărcarea a eșuat</string>
+    <string name="err_download_remove">Nu s-a putut șterge versiunea descărcată a yt-dlp</string>
+    <string name="err_ytdlp_restore">Nu s-a putut restabili versiunea inclusă a yt-dlp</string>
+    <string name="err_url_empty">Linkul este gol</string>
+    <string name="err_url_scheme">Linkul trebuie să înceapă cu http:// sau https://</string>
+    <string name="err_file_create">Nu s-a putut crea fișierul în folderul selectat</string>
+    <string name="err_folder_access">Nu există acces la folderul selectat</string>
+
+    <string name="about_link_failed">Nu s-a putut deschide browserul</string>
+
+    <string name="about_changelog_subtitle">Lista modificărilor pe GitHub</string>
+
 </resources>

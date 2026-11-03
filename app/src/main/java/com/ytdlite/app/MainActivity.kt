@@ -1,5 +1,6 @@
 package com.ytdlite.app
 
+import android.content.Context
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.google.android.material.transition.MaterialSharedAxis
+import com.ytdlite.app.data.settings.LanguageCatalog
 import com.ytdlite.app.databinding.ActivityMainBinding
 import com.ytdlite.app.ui.SubScreenHost
 import com.ytdlite.app.ui.TitledFragment
@@ -20,6 +22,7 @@ import com.ytdlite.app.ui.home.HomeFragment
 import com.ytdlite.app.ui.onboarding.FirstRunDialog
 import com.ytdlite.app.ui.queue.QueueFragment
 import com.ytdlite.app.ui.settings.SettingsFragment
+import java.util.Locale
 
 /**
  * Единственная Activity приложения.
@@ -50,11 +53,29 @@ class MainActivity : AppCompatActivity(), SubScreenHost {
     /** Подавляет реакцию слушателя, когда подэкраны закрываются программно. */
     private var suppressBackStackListener: Boolean = false
 
+    /**
+     * Язык применяем к контексту Activity до создания её ресурсов: тогда и
+     * разметка, и диалоги, и `getString()` сразу берут нужный язык.
+     *
+     * Никаких переопределений `getResources()`, `getLayoutInflater()` и
+     * `getSystemService()` здесь быть не должно: `LayoutInflater.from(activity)`
+     * сам приходит в `getSystemService`, и переопределение уходило в рекурсию —
+     * на Android 16 приложение падало на старте.
+     */
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LanguageCatalog.wrapSafely(newBase))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         restoringState = savedInstanceState != null
         // Material 3: контент под системными панелями, фон — цвет поверхности.
         enableEdgeToEdge()
+        // Пока новое окно не отрисовано при пересоздании, видна подложка окна.
+        window.setBackgroundDrawableResource(R.color.md_surface)
+        // Даты и String.format берут Locale.getDefault() — держим его на языке
+        // приложения, иначе в «Загрузках» месяц остаётся на языке системы.
+        runCatching { Locale.setDefault(LanguageCatalog.localeFor(this)) }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -114,6 +135,19 @@ class MainActivity : AppCompatActivity(), SubScreenHost {
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         updateToolbar()
+    }
+
+    /**
+     * Применяет выбранный язык.
+     *
+     * Единственный надёжный способ — пересоздать Activity: язык задаётся в
+     * [attachBaseContext], то есть работает только для нового экземпляра.
+     * Пересоздание идёт с сохранением состояния, поэтому пользователь остаётся
+     * на том же экране («Настройки» → «Язык»), но уже на новом языке.
+     */
+    fun onLanguageChanged() {
+        runCatching { Locale.setDefault(LanguageCatalog.localeFor(this)) }
+        recreate()
     }
 
     /**

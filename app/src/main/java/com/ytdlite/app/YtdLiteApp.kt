@@ -1,8 +1,11 @@
 package com.ytdlite.app
 
 import android.app.Application
+import android.content.Context
 import com.google.android.material.color.DynamicColors
 import com.ytdlite.app.data.queue.DownloadQueue
+import com.ytdlite.app.data.settings.LanguageCatalog
+import java.util.Locale
 
 /**
  * Точка входа приложения.
@@ -16,6 +19,18 @@ import com.ytdlite.app.data.queue.DownloadQueue
  * предпросмотра или уйти на другую вкладку.
  */
 class YtdLiteApp : Application() {
+
+    /**
+     * Язык применяем до создания ресурсов приложения: тогда строки на выбранном
+     * языке получают и Activity, и фрагменты, и уведомления очереди.
+     */
+    override fun attachBaseContext(base: Context) {
+        runCatching { LanguageCatalog.adoptPlatformChoice(base) }
+        // Дата и размер файла форматируются по Locale.getDefault(): без этого
+        // они оставались на языке системы, пока интерфейс уже переведён.
+        runCatching { Locale.setDefault(LanguageCatalog.localeFor(base)) }
+        super.attachBaseContext(LanguageCatalog.wrapSafely(base))
+    }
 
     override fun onCreate() {
         super.onCreate()

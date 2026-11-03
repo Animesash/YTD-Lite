@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   «О приложении» в стиле Material 3 Expressive: значок, название, версия
-  и кнопка «История изменений» — она открывает отдельный экран.
+  и строка «История изменений» — та же карточка со строкой, что и в
+  «Настройках»; открывает страницу релизов на GitHub.
 -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -44,15 +45,20 @@
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             android:textColor="?attr/colorOnSurfaceVariant" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_changelog"
-            style="@style/Widget.Material3Expressive.Button.TonalButton"
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:gravity="start|center_vertical"
-            android:text="@string/changelog_title"
-            app:icon="@drawable/ic_history"
-            app:iconGravity="textStart" />
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <com.ytdlite.app.ui.settings.SettingsRowView
+                android:id="@+id/row_changelog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </ScrollView>

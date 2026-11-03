@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.Uri
 import android.provider.DocumentsContract
 import android.webkit.MimeTypeMap
+import com.ytdlite.app.R
 import java.io.File
 import java.io.IOException
 
@@ -32,11 +33,11 @@ object DownloadSaver {
             ?: "application/octet-stream"
 
         val document = DocumentsContract.createDocument(resolver, parent, mime, source.name)
-            ?: throw IOException("Не удалось создать файл в выбранной папке")
+            ?: throw IOException(context.getString(R.string.err_file_create))
 
         try {
             val output = resolver.openOutputStream(document)
-                ?: throw IOException("Нет доступа к выбранной папке")
+                ?: throw IOException(context.getString(R.string.err_folder_access))
             output.use { out ->
                 source.inputStream().use { input -> input.copyTo(out) }
             }

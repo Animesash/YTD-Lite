@@ -1,8 +1,10 @@
 import java.util.Properties
 
+// Версии плагинов, библиотек, SDK и самой версии приложения — в
+// gradle/libs.versions.toml (version catalog).
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
 }
 
 /**
@@ -44,14 +46,14 @@ val keystoreProperties = Properties().apply {
 
 android {
     namespace = "com.ytdlite.app"
-    compileSdk = 35
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.ytdlite.app"
-        minSdk = 26 // Android 8.0
-        targetSdk = 34
-        versionCode = 1
-        versionName = "v0.1.0-alpha"
+        minSdk = libs.versions.minSdk.get().toInt() // Android 8.0
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
 
         // Только наши языки: переводы androidx/material на остальные ~80 языков
         // в APK не попадают (минус сотни килобайт в resources.arsc и res/).
@@ -163,18 +165,18 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
-    implementation("androidx.activity:activity-ktx:1.9.2")
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("com.google.android.material:material:1.14.0") // Material 3 Expressive
-    implementation("androidx.fragment:fragment-ktx:1.8.3")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material) // Material 3 Expressive
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.kotlinx.coroutines.android)
 
     // yt-dlp внутри приложения: Python + yt-dlp + ffmpeg.
     // https://github.com/yt-dlp/yt-dlp (stable)
     // https://github.com/yt-dlp/yt-dlp-nightly-builds (nightly)
-    implementation("io.github.junkfood02.youtubedl-android:library:0.18.1")
-    implementation("io.github.junkfood02.youtubedl-android:ffmpeg:0.18.1")
+    implementation(libs.youtubedl.library)
+    implementation(libs.youtubedl.ffmpeg)
 }

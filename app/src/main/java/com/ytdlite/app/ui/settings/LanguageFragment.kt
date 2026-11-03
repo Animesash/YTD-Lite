@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.ytdlite.app.MainActivity
 import com.ytdlite.app.R
 import com.ytdlite.app.data.settings.LanguageCatalog
 import com.ytdlite.app.databinding.FragmentLanguageBinding
@@ -37,7 +38,7 @@ class LanguageFragment : Fragment(R.layout.fragment_language), TitledFragment {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val current = LanguageCatalog.currentTag()
+        val current = LanguageCatalog.currentTag(requireContext())
         options.clear()
         LanguageCatalog.entries.forEach { tag ->
             val item = ViewLanguageOptionBinding.inflate(
@@ -45,6 +46,16 @@ class LanguageFragment : Fragment(R.layout.fragment_language), TitledFragment {
                 binding.optionsContainer,
                 true
             )
+            // У всех пунктов один и тот же id радиокнопки (R.id.radio). Из-за
+            // этого FragmentManager при пересоздании Activity (а смена языка
+            // как раз пересоздаёт её) сохранял состояние по id и раздавал одну
+            // и ту же галочку всем пунктам: после выбора UK галочка пропадала,
+            // после выбора EN появлялась на всех строках сразу. Даём каждой
+            // радиокнопке свой id и вообще не сохраняем её состояние — выбор
+            // всегда берём из LanguageCatalog.currentTag().
+            item.radio.id = View.generateViewId()
+            item.radio.isSaveEnabled = false
+
             val labelRes = LanguageCatalog.labelRes(tag) ?: R.string.language_system
             item.label.text = getString(labelRes)
             item.radio.isChecked = tag == current
@@ -60,7 +71,17 @@ class LanguageFragment : Fragment(R.layout.fragment_language), TitledFragment {
     }
 
     private fun select(tag: String?) {
-        LanguageCatalog.apply(tag)
+        val context = requireContext()
+        syncChecks(tag)
+        if (tag == LanguageCatalog.currentTag(context)) return
+
+        // Запоминаем выбор и сразу перерисовываем интерфейс на новом языке:
+        // Activity не перезапускается, поэтому нет тёмного кадра.
+        LanguageCatalog.apply(context, tag)
+        (activity as? MainActivity)?.onLanguageChanged()
+    }
+
+    private fun syncChecks(tag: String?) {
         options.forEach { (item, itemTag) -> item.radio.isChecked = itemTag == tag }
     }
 }

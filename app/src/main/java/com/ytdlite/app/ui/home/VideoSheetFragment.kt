@@ -54,6 +54,15 @@ class VideoSheetFragment : BottomSheetDialogFragment() {
     private var selectedHeight: Int? = null
     private var selectedBitrate: Int? = null
 
+    /**
+     * Выбрано ли «Аудио». Держим отдельным полем, а не читаем
+     * `buttonAudio.isChecked`: при переключении группа кнопок сообщает о новой
+     * кнопке раньше, чем снимает флажок со старой, и проверка состояния кнопки
+     * внутри слушателя давала бы ещё старое значение (был баг: после
+     * «Видео → Аудио → Видео» оставались аудиочипы «192 kbps»).
+     */
+    private var audioSelected = false
+
     /** Значения выбранных чипов качества: id чипа → высота (p) или кбит/с, -1 — «Лучшее». */
     private val chipValues = mutableMapOf<Int, Int>()
 
@@ -79,10 +88,25 @@ class VideoSheetFragment : BottomSheetDialogFragment() {
         val binding = binding ?: return
 
         // Программная смена выбора тоже вызывает слушатель — реагируем только
-        // на включение кнопки, чтобы не строить чипы дважды.
-        binding.toggleKind.addOnButtonCheckedListener { _, _, isChecked ->
-            if (isChecked) renderQuality()
+        // на включение кнопки, чтобы не строить чипы дважды. Тип берём из id
+        // включённой кнопки: состояние второй кнопки в этот момент ещё старое.
+        binding.toggleKind.addOnButtonCheckedListener { _, checkedId, isChecked ->
+            if (isChecked) renderQuality(audio = checkedId == R.id.button_audio)
         }
+
+        // Слушатель чипов ставим один раз: он читает chipValues и audioSelected,
+        // которые обновляет renderQuality().
+        binding.chipsQuality.setOnCheckedStateChangeListener { _, checkedIds ->
+            val id = checkedIds.firstOrNull() ?: return@setOnCheckedStateChangeListener
+            val value = chipValues[id] ?: return@setOnCheckedStateChangeListener
+            val chosen = value.takeIf { it != BEST }
+            if (audioSelected) {
+                selectedBitrate = chosen
+            } else {
+                selectedHeight = chosen
+            }
+        }
+
         binding.buttonDownload.setOnClickListener { startDownload() }
 
         loadInfo()
@@ -124,7 +148,7 @@ class VideoSheetFragment : BottomSheetDialogFragment() {
         binding.textKindHint.isVisible = !hasVideo
 
         binding.toggleKind.check(if (hasVideo) R.id.button_video else R.id.button_audio)
-        renderQuality()
+        renderQuality(audio = !hasVideo)
         loadCover(info.thumbnailUrl)
     }
 
@@ -181,10 +205,10 @@ class VideoSheetFragment : BottomSheetDialogFragment() {
     // ---------------------------------------------------------------- качество
 
     /** Чипы качества: разрешения для видео, битрейт для аудио. */
-    private fun renderQuality() {
+    private fun renderQuality(audio: Boolean) {
         val binding = binding ?: return
         val info = info ?: return
-        val audio = binding.buttonAudio.isChecked
+        audioSelected = audio
 
         selectedHeight = null
         selectedBitrate = null
@@ -221,15 +245,8 @@ class VideoSheetFragment : BottomSheetDialogFragment() {
             binding.chipsQuality.addView(chip)
         }
 
-        binding.chipsQuality.setOnCheckedStateChangeListener { _, checkedIds ->
-            val id = checkedIds.firstOrNull() ?: return@setOnCheckedStateChangeListener
-            val value = chipValues[id] ?: return@setOnCheckedStateChangeListener
-            val chosen = value.takeIf { it != BEST }
-            if (binding.buttonAudio.isChecked) {
-                selectedBitrate = chosen
-            } else {
-                selectedHeight = chosen
-            }
+        chipValues[binding.chipsQuality.checkedChipId]?.takeIf { it != BEST }?.let {
+            if (audio) selectedBitrate = it else selectedHeight = it
         }
     }
 
@@ -256,15 +273,17 @@ class VideoSheetFragment : BottomSheetDialogFragment() {
         val context = context ?: return
         if (downloading) return
 
-        val audio = binding.buttonAudio.isChecked
+        val audio = audioSelected
         val url = info.webpageUrl?.takeIf { it.isNotBlank() }
             ?: arguments?.getString(ARG_URL)
             ?: return
         val kind = if (audio) MediaKind.AUDIO else MediaKind.VIDEO
+        // null — «Лучшее»: подпись подставит «Очередь» на языке, который
+        // выбран в момент показа, иначе после смены языка висело бы старое.
         val quality = if (audio) {
-            selectedBitrate?.let { "$it kbps" } ?: getString(R.string.sheet_quality_best)
+            selectedBitrate?.let { "$it kbps" }
         } else {
-            selectedHeight?.let { "${it}p" } ?: getString(R.string.sheet_quality_best)
+            selectedHeight?.let { "${it}p" }
         }
 
         val id = UUID.randomUUID().toString()

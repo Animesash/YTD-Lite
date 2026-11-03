@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ytdlite.app.R
+import com.ytdlite.app.data.settings.LanguageCatalog
 import com.ytdlite.app.data.download.DownloadedFile
 import com.ytdlite.app.data.settings.MediaKind
 import com.ytdlite.app.databinding.ViewDownloadItemBinding
@@ -63,7 +64,8 @@ class DownloadsAdapter(
                 if (file.kind == MediaKind.AUDIO) R.string.sheet_audio else R.string.sheet_video
             )
             val size = Formatter.formatShortFileSize(context, file.sizeBytes)
-            val date = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT)
+            val locale = LanguageCatalog.localeFor(context)
+            val date = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale)
                 .format(Date(file.savedAt))
             return listOf(kind, size, date).joinToString(" · ")
         }
