@@ -2,6 +2,7 @@ package com.ytdlite.app.data.queue
 
 import android.content.Context
 import com.ytdlite.app.R
+import com.ytdlite.app.data.settings.LanguageCatalog
 import com.ytdlite.app.data.download.DownloadHistory
 import com.ytdlite.app.data.download.DownloadSaver
 import com.ytdlite.app.data.download.DownloadedFile
@@ -151,7 +152,7 @@ object DownloadQueue {
         val file = newestFile(dir)
         if (file == null) {
             update(task.id) {
-                it.copy(state = DownloadState.FAILED, message = context.getString(R.string.queue_no_file))
+                it.copy(state = DownloadState.FAILED, message = LanguageCatalog.localized(context).getString(R.string.queue_no_file))
             }
             return
         }

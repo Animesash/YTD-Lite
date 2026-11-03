@@ -80,7 +80,7 @@
     <string name="language_ru">Русский</string>
     <string name="language_uk">Українська</string>
     <string name="language_en">English</string>
-    <string name="language_note">Пасля выбару мовы праграма перазапусціцца.</string>
+    <string name="language_note">Мова ўжываецца адразу, без перазапуску праграмы.</string>
 
     <!-- Куда сохранять файлы -->
     <string name="folders_title">Папкі</string>
@@ -95,10 +95,7 @@
     <string name="folders_no_access">Доступ страчаны — выберыце папку зноў</string>
 
     <!-- История изменений -->
-    <string name="changelog_title">Гісторыя змен</string>
-    <string name="changelog_current">Бягучая</string>
-    <string name="changelog_whats_new">Што новага</string>
-    <string name="changelog_0_1_0_summary">Першы альфа-выпуск YTD-Lite</string>
+    <string name="about_changelog">Гісторыя змен</string>
 
     <!-- Проверка обновлений yt-dlp -->
     <string name="update_ytdlp_check">Праверыць зараз</string>
@@ -121,4 +118,21 @@ YTD-Lite спампоўвае відэа і аўдыё па спасылцы. П
 Версія 0.1.0-alpha. Гэта значыць, што палова дробязяў яшчэ не дапрацавана, а частка дакладна зламана. Калі нешта не працуе)</string>
     <string name="first_run_dont_show">Больш не паказваць</string>
     <string name="first_run_ok">Ок</string>
+
+    <!-- Тексты ошибок движка и сохранения файла. -->
+    <string name="err_ytdlp_init">Не ўдалося ініцыялізаваць yt-dlp</string>
+    <string name="err_ytdlp_update">Не ўдалося абнавіць yt-dlp</string>
+    <string name="err_video_info">Не ўдалося атрымаць інфармацыю пра відэа</string>
+    <string name="err_download">Памылка спампоўкі</string>
+    <string name="err_download_remove">Не ўдалося выдаліць спампаваную зборку yt-dlp</string>
+    <string name="err_ytdlp_restore">Не ўдалося вярнуць убудаваную версію yt-dlp</string>
+    <string name="err_url_empty">Пустое спасыланне</string>
+    <string name="err_url_scheme">Спасыланне павінна пачынацца з http:// або https://</string>
+    <string name="err_file_create">Не ўдалося стварыць файл у выбранай папцы</string>
+    <string name="err_folder_access">Няма доступу да выбранай папкі</string>
+
+    <string name="about_link_failed">Не ўдалося адкрыць браўзер</string>
+
+    <string name="about_changelog_subtitle">Спіс змен на GitHub</string>
+
 </resources>

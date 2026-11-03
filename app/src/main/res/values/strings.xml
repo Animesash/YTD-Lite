@@ -80,7 +80,7 @@
     <string name="language_ru">Русский</string>
     <string name="language_uk">Українська</string>
     <string name="language_en">English</string>
-    <string name="language_note">The app restarts after you pick a language.</string>
+    <string name="language_note">The language applies immediately, without restarting the app.</string>
 
     <!-- Куда сохранять файлы -->
     <string name="folders_title">Folders</string>
@@ -95,10 +95,7 @@
     <string name="folders_no_access">Access lost — pick the folder again</string>
 
     <!-- История изменений -->
-    <string name="changelog_title">Changelog</string>
-    <string name="changelog_current">Current</string>
-    <string name="changelog_whats_new">What\'s new</string>
-    <string name="changelog_0_1_0_summary">The first alpha release of YTD-Lite</string>
+    <string name="about_changelog">Changelog</string>
 
     <!-- Проверка обновлений yt-dlp -->
     <string name="update_ytdlp_check">Check now</string>
@@ -121,4 +118,21 @@ YTD-Lite downloads video and audio from a link. It runs on yt-dlp — I did not 
 Version 0.1.0-alpha. That means half of the small things are not finished yet, and some are definitely broken. If something does not work)</string>
     <string name="first_run_dont_show">Don’t show again</string>
     <string name="first_run_ok">OK</string>
+
+    <!-- Тексты ошибок движка и сохранения файла. -->
+    <string name="err_ytdlp_init">Couldn’t initialize yt-dlp</string>
+    <string name="err_ytdlp_update">Couldn’t update yt-dlp</string>
+    <string name="err_video_info">Couldn’t fetch the video info</string>
+    <string name="err_download">Download failed</string>
+    <string name="err_download_remove">Couldn’t remove the downloaded yt-dlp build</string>
+    <string name="err_ytdlp_restore">Couldn’t restore the bundled yt-dlp</string>
+    <string name="err_url_empty">The link is empty</string>
+    <string name="err_url_scheme">The link must start with http:// or https://</string>
+    <string name="err_file_create">Couldn’t create the file in the selected folder</string>
+    <string name="err_folder_access">No access to the selected folder</string>
+
+    <string name="about_link_failed">No browser to open the releases page</string>
+
+    <string name="about_changelog_subtitle">Release notes on GitHub</string>
+
 </resources>

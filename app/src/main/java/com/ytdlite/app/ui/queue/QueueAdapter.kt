@@ -45,7 +45,8 @@ class QueueAdapter(
             val kind = context.getString(
                 if (task.kind == MediaKind.AUDIO) R.string.sheet_audio else R.string.sheet_video
             )
-            val details = listOfNotNull(kind, task.quality).joinToString(" · ")
+            val quality = task.quality ?: context.getString(R.string.sheet_quality_best)
+            val details = listOf(kind, quality).joinToString(" · ")
             val status = when (task.state) {
                 DownloadState.PENDING -> context.getString(R.string.queue_waiting)
                 DownloadState.RUNNING -> context.getString(
